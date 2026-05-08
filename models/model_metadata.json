@@ -1,0 +1,105 @@
+{
+  "target": "defaulted",
+  "model": "Tuned Random Forest",
+  "business_threshold": 0.42000000000000015,
+  "best_params": {
+    "classifier__max_depth": 6,
+    "classifier__min_samples_leaf": 3,
+    "classifier__min_samples_split": 8,
+    "classifier__n_estimators": 160
+  },
+  "numeric_features": [
+    "applicant_age",
+    "annual_income",
+    "employment_years",
+    "credit_history_years",
+    "credit_score",
+    "previous_defaults",
+    "loan_amount",
+    "loan_term_months",
+    "monthly_debt",
+    "debt_to_income",
+    "interest_rate"
+  ],
+  "categorical_features": [
+    "education",
+    "home_ownership",
+    "loan_purpose"
+  ],
+  "top_features": [
+    {
+      "feature": "interest_rate",
+      "importance": 0.29175337764462167
+    },
+    {
+      "feature": "credit_score",
+      "importance": 0.2444182953768631
+    },
+    {
+      "feature": "previous_defaults",
+      "importance": 0.11418173243814668
+    },
+    {
+      "feature": "annual_income",
+      "importance": 0.07409942727819344
+    },
+    {
+      "feature": "loan_amount",
+      "importance": 0.05551954575830939
+    },
+    {
+      "feature": "credit_history_years",
+      "importance": 0.04499287315930625
+    },
+    {
+      "feature": "debt_to_income",
+      "importance": 0.03319098019536603
+    },
+    {
+      "feature": "monthly_debt",
+      "importance": 0.03193796914290239
+    }
+  ],
+  "top_permutation_features": [
+    {
+      "feature": "interest_rate",
+      "importance_mean": 0.04389880952380956,
+      "importance_std": 0.009021097956087904
+    },
+    {
+      "feature": "credit_score",
+      "importance_mean": 0.035714285714285726,
+      "importance_std": 0.012089342864041612
+    },
+    {
+      "feature": "annual_income",
+      "importance_mean": 0.021577380952380987,
+      "importance_std": 0.005313562818856268
+    },
+    {
+      "feature": "loan_amount",
+      "importance_mean": 0.0074404761904762196,
+      "importance_std": 0.009982446328124067
+    },
+    {
+      "feature": "home_ownership",
+      "importance_mean": 0.005952380952380987,
+      "importance_std": 0.0066549642187494
+    },
+    {
+      "feature": "loan_term_months",
+      "importance_mean": 0.0014880952380952328,
+      "importance_std": 0.0014880952380952328
+    },
+    {
+      "feature": "credit_history_years",
+      "importance_mean": 0.0007440476190476442,
+      "importance_std": 0.004879046521058065
+    },
+    {
+      "feature": "education",
+      "importance_mean": 2.7755575615628914e-17,
+      "importance_std": 0.0042089689356342355
+    }
+  ]
+}

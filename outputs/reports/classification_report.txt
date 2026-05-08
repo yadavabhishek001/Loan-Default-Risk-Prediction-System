@@ -1,0 +1,11 @@
+Tuned Random Forest Classification Report
+Business threshold: 0.42
+
+              precision    recall  f1-score   support
+
+  No Default       0.87      0.68      0.77       764
+     Default       0.52      0.76      0.62       336
+
+    accuracy                           0.71      1100
+   macro avg       0.69      0.72      0.69      1100
+weighted avg       0.76      0.71      0.72      1100

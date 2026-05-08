@@ -1,0 +1,24 @@
+feature,importance
+interest_rate,0.29175337764462167
+credit_score,0.2444182953768631
+previous_defaults,0.11418173243814668
+annual_income,0.07409942727819344
+loan_amount,0.05551954575830939
+credit_history_years,0.04499287315930625
+debt_to_income,0.03319098019536603
+monthly_debt,0.03193796914290239
+applicant_age,0.03174785043499761
+employment_years,0.030373596727662707
+loan_term_months,0.009805879972996208
+home_ownership_Rent,0.007076264211466132
+home_ownership_Own,0.005144874176242848
+education_Not Graduate,0.003803083056141533
+loan_purpose_Business,0.003555866684051162
+loan_purpose_Education,0.003485600834533988
+education_Post Graduate,0.0027890560713076744
+education_Graduate,0.0025732359821514514
+loan_purpose_Debt Consolidation,0.002371951094579702
+home_ownership_Mortgage,0.0021796712747405907
+loan_purpose_Vehicle,0.0018303866901197318
+loan_purpose_Home Improvement,0.0015958201497267746
+loan_purpose_Medical,0.0015726616455731075
