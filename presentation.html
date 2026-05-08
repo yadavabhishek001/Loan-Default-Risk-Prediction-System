@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan Default Risk Prediction System</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #53606c;
+      --brand: #0f766e;
+      --accent: #b45309;
+      --paper: #f8fafc;
+      --line: #d9e2ec;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+    .deck {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+    .slide {
+      min-height: 100vh;
+      padding: 64px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+    }
+    h1 {
+      font-size: 56px;
+      line-height: 1.05;
+      margin: 0 0 20px;
+      letter-spacing: 0;
+    }
+    h2 {
+      font-size: 42px;
+      margin: 0 0 28px;
+      letter-spacing: 0;
+    }
+    p, li {
+      font-size: 25px;
+      color: var(--muted);
+    }
+    ul {
+      margin: 0;
+      padding-left: 30px;
+    }
+    li {
+      margin: 14px 0;
+    }
+    .tag {
+      color: var(--brand);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .metric {
+      border-left: 6px solid var(--brand);
+      padding: 18px 22px;
+      background: #f1f7f6;
+    }
+    .metric strong {
+      display: block;
+      font-size: 34px;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+    img {
+      max-width: 100%;
+      max-height: 68vh;
+      object-fit: contain;
+      border: 1px solid var(--line);
+    }
+    .note {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    @media (max-width: 760px) {
+      .slide { padding: 42px 24px; }
+      h1 { font-size: 38px; }
+      h2 { font-size: 32px; }
+      p, li { font-size: 20px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="slide">
+      <div class="tag">CSE247 Applied Machine Learning</div>
+      <h1>Loan Default Risk Prediction System with Explainable AI</h1>
+      <p>Machine learning pipeline for identifying high-risk loan applicants and explaining the decision.</p>
+    </section>
+
+    <section class="slide">
+      <h2>Problem Statement</h2>
+      <p>Predict whether a loan applicant will default using financial, credit, and personal profile data.</p>
+      <ul>
+        <li>Input: applicant and loan features</li>
+        <li>Output: high-risk or low-risk prediction</li>
+        <li>Task type: supervised binary classification</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Why It Matters</h2>
+      <ul>
+        <li>Wrong loan approvals can create direct financial loss.</li>
+        <li>Risk prediction supports faster and more consistent decisions.</li>
+        <li>Explainability helps humans understand why an applicant is risky.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Dataset</h2>
+      <div class="grid">
+        <div class="metric"><strong>5,000</strong>Applicant records</div>
+        <div class="metric"><strong>15</strong>Total columns</div>
+        <div class="metric"><strong>14</strong>Input features</div>
+        <div class="metric"><strong>30.6%</strong>Default rate</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Preprocessing</h2>
+      <ul>
+        <li>Median imputation for numerical missing values</li>
+        <li>Most frequent imputation for categorical missing values</li>
+        <li>Standard scaling for numerical columns</li>
+        <li>One-hot encoding for categorical columns</li>
+        <li>Pipeline-based design to avoid data leakage</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>EDA: Class Distribution</h2>
+      <img src="outputs/figures/01_target_distribution.png" alt="Target distribution">
+    </section>
+
+    <section class="slide">
+      <h2>EDA: Correlation Heatmap</h2>
+      <img src="outputs/figures/02_correlation_heatmap.png" alt="Correlation heatmap">
+    </section>
+
+    <section class="slide">
+      <h2>EDA: Credit Score and Default</h2>
+      <img src="outputs/figures/03_credit_score_vs_default.png" alt="Credit score by default">
+    </section>
+
+    <section class="slide">
+      <h2>Models Compared</h2>
+      <ul>
+        <li>Logistic Regression as baseline</li>
+        <li>Decision Tree for interpretability</li>
+        <li>Random Forest for strong ensemble learning</li>
+        <li>Gradient Boosting for performance comparison</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Evaluation Strategy</h2>
+      <p class="note">Recall is critical because missing a real defaulter is costly.</p>
+      <ul>
+        <li>Accuracy, precision, recall, F1-score</li>
+        <li>ROC-AUC and PR-AUC</li>
+        <li>Confusion matrix</li>
+        <li>Business threshold tuned for stronger default detection</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Model Result: Confusion Matrix</h2>
+      <img src="outputs/figures/06_confusion_matrix.png" alt="Confusion matrix">
+    </section>
+
+    <section class="slide">
+      <h2>Model Comparison</h2>
+      <img src="outputs/figures/09_model_recall_comparison.png" alt="Model recall comparison">
+    </section>
+
+    <section class="slide">
+      <h2>Explainable AI</h2>
+      <img src="outputs/figures/10_feature_importance.png" alt="Feature importance">
+    </section>
+
+    <section class="slide">
+      <h2>Permutation Importance</h2>
+      <img src="outputs/figures/11_permutation_importance.png" alt="Permutation importance">
+    </section>
+
+    <section class="slide">
+      <h2>Final App</h2>
+      <ul>
+        <li>Accepts applicant and loan details</li>
+        <li>Returns default probability</li>
+        <li>Classifies applicant as high risk or low risk</li>
+        <li>Shows human-readable explanation</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Conclusion</h2>
+      <ul>
+        <li>Built complete ML pipeline from data to deployment-style app</li>
+        <li>Compared multiple models and tuned Random Forest</li>
+        <li>Focused on recall due to financial risk impact</li>
+        <li>Added explainability for trust and viva clarity</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
